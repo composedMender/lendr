@@ -1,10 +1,12 @@
+// App.js
+import React from 'react';
 import './App.css';
+import Home from './Home';
+import './App.css'; // Import a CSS file for the styles
 
 function App() {
   return (
-    <div className="App">
-      <h1>LENDR</h1>
-    </div>
+    <Home />
   );
 }
 

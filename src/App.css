@@ -1,1 +1,210 @@
 
+/* App.css */
+@font-face {
+    font-family: 'MS Gothic';
+    src: url(../public/fonts/msgothic.ttc) format('truetype'); /* Relative path to the font file from the CSS file */
+  }
+  html {
+    font-family: 'MS Gothic', sans-serif;
+  }
+  /* Set tiling background image */
+  body {
+    background-image: url('/public/悲しい.jpg'); /* Replace with the path to your desired image */
+    background-repeat: repeat; /* Set to repeat for tiling effect */
+    font-family: 'MS Gothic', sans-serif;
+  }
+  
+  canvas {
+    width: 100%;
+    height: 100%;
+    border: 3px solid black;
+  }
+  
+  .box-content h2 {
+    margin-block-start: 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Set min-height to 100vh to stretch container to full height of viewport */
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .row {
+    display: flex; /* Use Flexbox to create a row layout */
+  }
+  
+  .column-25 {
+    flex-basis: 240px;
+    max-width: 240px;
+    padding: 20px;
+    background-color: #f8f8f833; /* Set background color for the column */
+  }
+  
+  .column-50 {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #e0e0e033; /* Set background color for the column */
+  }
+  
+  .column-25:last-child {
+    flex-basis: 240px;
+    padding: 20px;
+    background-color: #d0d0d033; /* Set background color for the column */
+  }
+  
+  
+  /* Header.css */
+  header {
+    height: 50px;
+    background-color: #f0f0f0; /* Set the background color of the header */
+  }
+  
+  /* Add desired styles for the div */
+  .header-overlay {
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  nav ul {
+    list-style-type: none; /* Remove the bullet points from the list */
+    display: flex; /* Set the display property to flex for horizontal layout */
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* Remove padding from the list */
+  }
+  
+  nav li {
+    margin-right: 10px; /* Add some margin between the tabs */
+  }
+  
+  nav a {
+    text-decoration: none; /* Remove the default underline on links */
+    color: #333; /* Set the color of the tab labels */
+    padding: 10px; /* Add some padding to the tabs */
+  }
+  
+  nav a:hover {
+    background-color: #ccc; /* Change the background color on hover */
+  }
+  
+  .footer {
+    display: flex; /* Use flexbox to align footer content */
+    justify-content: center; /* Center footer content horizontally */
+    align-items: center; /* Center footer content vertically */
+    margin-top: auto;
+    background-color: #f8f8f8;
+    padding: 20px;
+  }
+  
+  /* Box.css */
+  .box {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .box-title {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 10px 5px 10px;
+    background: linear-gradient(135deg, rgba(0,0,0,1) 10%, rgba(50,50,50, 1) 28%, rgba(0,0,0,1) 28%);
+    background-blend-mode: multiply;
+    color: #ffffff; /* Updated: Set text color to white */
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    /* Add necessary styles for overflow and white-space */
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .box-title::before {
+    content: "";
+    position: absolute;
+    top: 0; /* Adjust as needed */
+    left: 0; /* Adjust as needed */
+    right: 0; /* Adjust as needed */
+    bottom: 0; /* Adjust as needed */
+    box-shadow: inset 3px 3px 0px rgba(255, 255, 255, 0.3); /* Adjust values as needed */
+    z-index: 1; /* Add higher z-index to make sure it appears above the gradient */
+  }
+  
+  .box-content {
+    padding: 10px;
+  }
+  
+  .box-title:hover {
+    /* Use the animation property to apply the scroll animation */
+    animation: scroll 8s linear infinite;
+  }
+  
+  /* Spotify Magic */
+  #current-track-album-art {
+    max-width: 100%;
+  }
+  
+  
+  /* Define @keyframes animation */
+  @keyframes scroll {
+    0% {
+      text-indent: 0;
+    }
+    100% {
+      text-indent: -100%;
+    }
+  }
+  
+  #scroll-container {
+    border: 3px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  #scroll-text {
+    /* animation properties */
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    
+    -moz-animation: my-animation 15s linear infinite;
+    -webkit-animation: my-animation 15s linear infinite;
+    animation: my-animation 15s linear infinite;
+  }
+  
+  /* for Firefox */
+  @-moz-keyframes my-animation {
+    from { -moz-transform: translateX(100%); }
+    to { -moz-transform: translateX(-100%); }
+  }
+  
+  /* for Chrome */
+  @-webkit-keyframes my-animation {
+    from { -webkit-transform: translateX(100%); }
+    to { -webkit-transform: translateX(-100%); }
+  }
+  
+  @keyframes my-animation {
+    from {
+      -moz-transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+    }
+    to {
+      -moz-transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+  }
+  
+  
