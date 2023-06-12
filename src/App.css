@@ -154,6 +154,12 @@
     max-width: 100%;
   }
   
+  /* EVENT BLOCK */
+  
+  .event-block {
+    display: flex;
+    flex-direction: column;
+  }
   
   /* Define @keyframes animation */
   @keyframes scroll {
