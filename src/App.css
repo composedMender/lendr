@@ -148,17 +148,68 @@
     /* Use the animation property to apply the scroll animation */
     animation: scroll 8s linear infinite;
   }
+
+  /* Calendar */
   
-  /* Spotify Magic */
-  #current-track-album-art {
-    max-width: 100%;
+  .calendar {
   }
-  
+
+  .calendar-content-container {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+  }
+
+  .timebar-container {
+    width: 75px;
+  }
+
+  .time-slot {
+    font-size: small;
+    line-height: 48px;
+    margin: 0px 8px;
+    text-align: right;
+  }
+
+  .grid-container {
+    height: 1152px;
+    width: 100%;
+    overflow: hidden;
+    
+  }
+
+  .calendar-day-container {
+    height: 1152px;
+    width: 100%;
+    background-image:
+      repeating-linear-gradient(#ccc 0 1px, transparent 1px 100%),
+      repeating-linear-gradient(90deg, #ccc 0 1px, transparent 1px 100%);
+    background-size: 100% 24px;
+  }
+
+  .grid {
+    position: fixed;
+    height: 1152px;
+    width: 100%;
+    background-image:
+      repeating-linear-gradient(#ccc 0 1px, transparent 1px 100%),
+      repeating-linear-gradient(90deg, #ccc 0 1px, transparent 1px 100%);
+    background-size: 100% 48px;
+  }
+
   /* EVENT BLOCK */
   
+  .event-display {
+  }
   .event-block {
     display: flex;
     flex-direction: column;
+  }
+
+  /* EventDisplay */
+
+  .event-display-container {
+
   }
   
   /* Define @keyframes animation */
