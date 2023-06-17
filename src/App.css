@@ -200,10 +200,49 @@
   /* EVENT BLOCK */
   
   .event-display {
+    height: 48px;
   }
   .event-block {
     display: flex;
     flex-direction: column;
+  }
+
+  .event-box {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 48px;
+  }
+
+  .event-box-title {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 10px 5px 10px;
+    background: linear-gradient(135deg, rgba(0,0,0,1) 10%, rgba(50,50,50, 1) 28%, rgba(0,0,0,1) 28%);
+    background-blend-mode: multiply;
+    color: #ffffff; /* Updated: Set text color to white */
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    /* Add necessary styles for overflow and white-space */
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .event-box-title::before {
+    content: "";
+    position: absolute;
+    top: 0; /* Adjust as needed */
+    left: 0; /* Adjust as needed */
+    right: 0; /* Adjust as needed */
+    bottom: 0; /* Adjust as needed */
+    box-shadow: inset 3px 3px 0px rgba(255, 255, 255, 0.3); /* Adjust values as needed */
+    z-index: 1; /* Add higher z-index to make sure it appears above the gradient */
+  }
+
+  .event-box-content {
+    padding: 10px;;
   }
 
   /* EventDisplay */
