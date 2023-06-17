@@ -91,21 +91,28 @@ export const EventDisplay = ({ event, eventPosition, hour }) => {
   useEffect(() => {
     const handleMouseMove = (event) => {
       if (isDragging) {
-        const containerRect = 48;
-        const containerHeight = 48;
+        const containerRect = containerRef.current.getBoundingClientRect();
+        const containerHeight = containerRect.height;
         console.log("container height: " + containerHeight);
 
         // Calculate the delta between the initial position and current mouse position
-        const delta = event.client.Y;
-        console.log("mouse Y: " + event.client.Y);
+        const delta = event.clientY - containerOffset.top;
+        console.log("mouse Y: " + event.clientY);
+        console.log("Element initial pos: " + containerRect.top);
+
+        // Calculate the time difference based on the delta and time slot height
+        const timeSlotHeight = containerHeight; // Assuming 24-hour time slots
+        const timeDiff = Math.round(delta / timeSlotHeight);
 
         // Snap to the nearest time slot if it exceeds the threshold
-        if (event.client.Y >= 48 || event.client.Y <= -48) {
-         
-          console.log(hour);
-
-          containerRef.current.style.transform = `translateY(${48}px)`;
+        if (Math.abs(timeDiff) >= 0.5) {
+          // Update the snap time based on the initial snap time
+          const newSnapTime = initialSnapTime + timeDiff;
           hour++;
+
+          // Update the snapped time and EventDisplay position
+          setSnapTime(newSnapTime);
+          containerRef.current.style.transform = `translateY(${timeDiff * timeSlotHeight}px)`;
         }
       }
     };
